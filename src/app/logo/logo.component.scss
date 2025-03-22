@@ -1,0 +1,90 @@
+.text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.text {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#text1 {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+#text2 {
+  animation: fadeInRight 1.5s ease-out forwards;
+}
+
+#text3 {
+  animation: fadeInLate 1.5s ease-out forwards;
+}
+
+#text4 {
+  animation: fadeInLeft 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(14%);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(128%);
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-60%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLate {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(30%);
+  }
+}
