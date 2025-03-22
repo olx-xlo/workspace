@@ -47,7 +47,7 @@ export class StockService {
 
   async queryStocks(query: string): Promise<QueryDto[]> {
     const url = `${this.baseUrl}/search?query=${query}&apikey=${this.apiKey}`;
-
+    console.log('STARTED QUERY:', query);
     try {
       const result = await lastValueFrom(this.httpService.get(url));
       return result.data as QueryDto[];

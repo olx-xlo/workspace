@@ -1,0 +1,13 @@
+<div class="home">
+  <app-logo></app-logo>
+  <app-search-bar
+    placeholder="Search"
+    (searchEmitter)="searchStocks($event)"
+  ></app-search-bar>
+  @if(showTable){
+  <app-stock-table
+    [queriedData]="queriedData$ | async"
+    (columnClicked)="openHistoricalView($event)"
+  ></app-stock-table>
+  }
+</div>
