@@ -1,0 +1,11 @@
+<div class="home">
+  <!-- eslint-disable-next-line -->
+  <div class="back" role="button" (click)="navigateBack()">👈</div>
+  <h1>{{ name }}</h1>
+  <h2>{{ symbol }}</h2>
+  @if(symbol===null ||noData){
+  <app-empty></app-empty>
+  } @if(chartOptions !==null){
+  <app-stock-chart [chartOptions]="chartOptions"></app-stock-chart>
+  } @if(isLoading){ <app-loader></app-loader> }
+</div>

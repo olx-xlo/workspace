@@ -6,9 +6,8 @@ import { StockTableComponent } from '../stock-table/stock-table.component';
 import { ColumnData } from 'shared/models/column-data.model';
 import { QueryDto } from 'shared/models/query-data.model';
 import { StockService } from 'src/services/stock.service';
-import { catchError, EMPTY, map, Observable } from 'rxjs';
+import { catchError, EMPTY, Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home-page',
@@ -31,8 +30,7 @@ export class HomePageComponent {
 
   constructor(
     private readonly stockService: StockService,
-    private readonly router: Router,
-    private readonly toastr: ToastrService
+    private readonly router: Router
   ) {}
 
   searchStocks(query: string): void {
@@ -50,6 +48,11 @@ export class HomePageComponent {
   }
 
   openHistoricalView(column: ColumnData): void {
-    console.log('open history view', column);
+    this.router.navigate(['history'], {
+      state: {
+        symbol: column.symbol,
+        name: column.name,
+      },
+    });
   }
 }

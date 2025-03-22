@@ -8,4 +8,11 @@ export const appRoutes: Route[] = [
         (m) => m.HomePageComponent
       ),
   },
+  {
+    path: 'history',
+    loadComponent: () =>
+      import('./history-page/history-page.component').then(
+        (m) => m.HistoryPageComponent
+      ),
+  },
 ];
