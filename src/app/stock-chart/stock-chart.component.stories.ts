@@ -175,12 +175,21 @@ export const Primary: Story = {
       },
       xaxis: {
         type: 'category',
-        labels: {},
+        labels: {
+          style: {
+            colors: '#edeade',
+          },
+        },
         convertedCatToNumeric: true,
       },
       yaxis: {
         tooltip: {
           enabled: true,
+        },
+        labels: {
+          style: {
+            colors: '#edeade',
+          },
         },
       },
     },
