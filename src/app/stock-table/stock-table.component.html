@@ -1,6 +1,8 @@
 @if(queriedData){
 <h5 [@appear]>
-  {{ queriedData.length }} hits @if(queriedData.length>200){
+  {{ queriedData.length }}
+  <span>hit</span>@if(queriedData.length!==1){<span>s</span>}
+  @if(queriedData.length>200){
   <span>...scroll awaaaayyy</span>
   }
 </h5>

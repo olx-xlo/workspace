@@ -5,7 +5,7 @@
   <h2>{{ symbol }}</h2>
   @if(symbol===null ||noData){
   <app-empty></app-empty>
-  } @if(chartOptions !==null){
+  } @else if(chartOptions){
   <app-stock-chart [chartOptions]="chartOptions"></app-stock-chart>
   } @if(isLoading){ <app-loader></app-loader> }
 </div>

@@ -140,6 +140,9 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
           y: [data.open ?? 0, data.high ?? 0, data.low ?? 0, data.close ?? 0],
         });
     });
+    if (!result.length) {
+      this.noData = true;
+    }
     return result.reverse();
   }
 
