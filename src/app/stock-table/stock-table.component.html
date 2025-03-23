@@ -38,14 +38,14 @@
         }"
         >
           @if(column.changes===null || column.changes===undefined){ 🤔 } @else{
-          {{ column.changes | number : '1.0-5' }}
+          {{ column.changes | number : '1.0-5' | positiveNumber }}
           }
         </div>
       </td>
       <td>
         <div class="chip">
           @if(column.marketCap===null){ 🤔 } @else{
-          {{ column.marketCap }}
+          {{ column.marketCap | numberSuffix : 2 }}
           }
         </div>
       </td>

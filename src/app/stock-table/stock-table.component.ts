@@ -28,10 +28,18 @@ import {
   Subject,
   takeUntil,
 } from 'rxjs';
+import { NumberSuffixPipe } from 'src/pipes/number-suffix.pipe';
+import { PositiveNumberPipe } from 'src/pipes/positive-number.pipe';
 
 @Component({
   selector: 'app-stock-table',
-  imports: [CommonModule, EmptyComponent, LoaderComponent],
+  imports: [
+    CommonModule,
+    EmptyComponent,
+    LoaderComponent,
+    NumberSuffixPipe,
+    PositiveNumberPipe,
+  ],
   templateUrl: './stock-table.component.html',
   styleUrl: './stock-table.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
