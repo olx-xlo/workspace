@@ -120,11 +120,19 @@ export class HistoryPageComponent implements OnInit, OnDestroy {
           formatter: function (val: string | number | Date) {
             return moment(new Date(val)).format('MMM DD HH:mm');
           },
+          style: {
+            colors: '#edeade',
+          },
         },
       },
       yaxis: {
         tooltip: {
           enabled: true,
+        },
+        labels: {
+          style: {
+            colors: '#edeade',
+          },
         },
       },
     };

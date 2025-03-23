@@ -3,8 +3,8 @@ body {
   height: 100%;
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: #197bbd;
-  color: #262626;
+  background: #262626;
+  color: #edeade;
 }
 .home {
   align-items: center;
@@ -70,7 +70,7 @@ tr[role='button'] {
 }
 .toast-message a,
 .toast-message label {
-  color: #ffffff;
+  color: #edeade;
 }
 .toast-message a:hover {
   color: #cccccc;
@@ -83,8 +83,8 @@ tr[role='button'] {
   float: right;
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff;
-  text-shadow: 0 1px 0 #ffffff;
+  color: #edeade;
+  text-shadow: 0 1px 0 #edeade;
   /* opacity: 0.8; */
 }
 .toast-close-button:hover,
@@ -122,7 +122,7 @@ button.toast-close-button {
   background-repeat: no-repeat;
   background-size: 24px;
   box-shadow: 0 0 12px #999999;
-  color: #ffffff;
+  color: #edeade;
 }
 .toast-container .ngx-toastr:hover {
   box-shadow: 0 0 12px #000000;
