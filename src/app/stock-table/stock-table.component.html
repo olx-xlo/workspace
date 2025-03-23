@@ -41,7 +41,9 @@
         >
           @if(column.changes===null || column.changes===undefined){ 🤔 } @else{
           {{ column.changes | number : '1.0-5' | positiveNumber }}
-          }
+          @if(column.changesPercentage) {({{
+            column.changesPercentage | number : '1.0-5' | positiveNumber
+          }}%)} }
         </div>
       </td>
       <td>

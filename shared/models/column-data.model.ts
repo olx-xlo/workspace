@@ -4,6 +4,7 @@ export interface ColumnData {
   price: number | null | undefined;
   changes: number | null | undefined;
   marketCap: number | null | undefined;
+  changesPercentage: number | null | undefined;
 }
 
 export interface StockDto {

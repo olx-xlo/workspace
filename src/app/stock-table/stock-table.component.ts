@@ -160,6 +160,7 @@ export class StockTableComponent implements OnInit, OnChanges, OnDestroy {
         price: undefined,
         changes: undefined,
         marketCap: undefined,
+        changesPercentage: undefined,
       });
     });
 

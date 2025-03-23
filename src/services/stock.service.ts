@@ -57,6 +57,7 @@ export class StockService {
         price: null,
         changes: null,
         marketCap: null,
+        changesPercentage: null,
       };
     }
     return {
@@ -65,6 +66,7 @@ export class StockService {
       price: stockData.price,
       changes: stockData.change,
       marketCap: stockData.marketCap,
+      changesPercentage: stockData.changesPercentage,
     };
   }
 
