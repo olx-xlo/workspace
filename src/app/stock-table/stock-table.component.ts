@@ -75,8 +75,6 @@ export class StockTableComponent implements OnInit, OnChanges, OnDestroy {
   currentPageIndex = 0;
   isLoadingPage = false;
 
-  columnMap: Map<string, ColumnData> = new Map();
-
   private readonly destroy$ = new Subject<void>();
 
   constructor(
@@ -100,7 +98,6 @@ export class StockTableComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private _resetAndLoad(): void {
-    this.columnMap.clear();
     this.columnData = [];
     this.currentPageIndex = 0;
     this._loadMoreData();
@@ -148,21 +145,21 @@ export class StockTableComponent implements OnInit, OnChanges, OnDestroy {
       return;
     this.isLoadingPage = true;
 
-    const newData = this.queriedData.slice(
-      this.currentPageIndex * this.pageSize,
-      (this.currentPageIndex + 1) * this.pageSize
-    );
-
-    newData.forEach((dataPoint) => {
-      this.columnMap.set(dataPoint.symbol, {
-        symbol: dataPoint.symbol,
-        name: dataPoint.name,
-        price: undefined,
-        changes: undefined,
-        marketCap: undefined,
-        changesPercentage: undefined,
+    const newData: ColumnData[] = this.queriedData
+      .slice(
+        this.currentPageIndex * this.pageSize,
+        (this.currentPageIndex + 1) * this.pageSize
+      )
+      .map((dataPoint) => {
+        return {
+          symbol: dataPoint.symbol,
+          name: dataPoint.name,
+          price: undefined,
+          changes: undefined,
+          marketCap: undefined,
+          changesPercentage: undefined,
+        } as ColumnData;
       });
-    });
 
     this.changeDetectorRef.markForCheck();
 
@@ -189,8 +186,7 @@ export class StockTableComponent implements OnInit, OnChanges, OnDestroy {
     forkJoin(stockDataObservables)
       .pipe(takeUntil(this.destroy$))
       .subscribe((results: ColumnData[]) => {
-        results.forEach((column) => this.columnMap.set(column.symbol, column));
-        this.columnData = [...this.columnMap.values()];
+        this.columnData = [...this.columnData, ...results];
         this.isLoadingPage = false;
         this.currentPageIndex++;
         this.changeDetectorRef.markForCheck();
